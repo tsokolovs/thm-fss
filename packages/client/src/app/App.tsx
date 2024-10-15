@@ -8,7 +8,7 @@ export default function App() {
   const [debouncedSearchTerm] = useDebounce(searchTerm.trim(), 300);
   const { data: { hotels, countries, cities } } = useFetchSearchData(debouncedSearchTerm);
 
-  // Author-comment: in real app I would add skeleton loader
+  // Author-comment: in real app I would add a skeleton loader and utilize isLoading from useFetchSearchData
   return (
     <section className="row height d-flex justify-content-center align-items-center">
       <div className="col-md-6">
