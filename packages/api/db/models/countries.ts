@@ -2,7 +2,7 @@ import { model, Schema } from 'mongoose';
 
 const countrySchema = new Schema(
   {
-    country: String,
+    country: { type: String, index: true },
     countryisocode: String,
   }
 );

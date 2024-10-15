@@ -4,7 +4,8 @@ import { hotelRouter } from '@routes/hotel';
 import { searchRouter } from '@routes/search';
 import { countryRouter } from '@routes/country';
 import { cityRouter } from '@routes/city';
-import { hotelModel } from '@db/models/hotels';
+import { errorMiddleware } from '@middlewares/error';
+import { ErrorType } from '@utils/error';
 
 const app = express();
 
@@ -16,13 +17,10 @@ app.use(hotelRouter);
 app.use(countryRouter);
 app.use(cityRouter);
 
-app.get('/hotels', async (req, res) => {
-  res.send(await hotelModel.find());
-});
-
-
 app.use((req: Request, res: Response, next: NextFunction) => {
-  next(); // TODO: not found error
+  next(new Error(ErrorType.NotFound));
 });
+
+app.use(errorMiddleware);
 
 export const mainApp = app;
