@@ -9,5 +9,19 @@
     "skipLibCheck": true,
     "baseUrl": ".",
     "outDir": "./dist",
+    "paths": {
+      "@routes/*": [
+        "routes/*"
+      ],
+      "@middlewares/*": [
+        "middlewares/*"
+      ],
+      "@db/*": [
+        "db/*"
+      ],
+      "@utils/*": [
+        "utils/*"
+      ]
+    }
   }
 }

@@ -3,7 +3,8 @@
   "type": "module",
   "version": "1.0.0",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
+    "test:watch": "NODE_ENV=test jest --watchAll --detectOpenHandles",
     "dev": "tsx watch --clear-screen=false .",
     "dev:api": "npm run dev",
     "dev:no-watch": "tsx .",
@@ -17,12 +18,19 @@
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
-    "mongodb": "^6.7.0"
+    "mongoose": "^8.7.1"
   },
   "devDependencies": {
     "@types/cors": "^2.8.17",
     "@types/express": "^4.17.21",
+    "@types/jest": "^29.5.13",
+    "@types/supertest": "^6.0.2",
+    "fss-models": "^0.0.0",
+    "jest": "^29.7.0",
     "mongodb-memory-server": "^9.4.0",
+    "supertest": "^7.0.0",
+    "ts-jest": "^29.2.5",
+    "ts-node": "^10.9.2",
     "tsx": "^4.16.2",
     "typescript": "^5.4.5"
   }

@@ -21,7 +21,21 @@
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+    "paths": {
+      "@app": [
+        "./src/app"
+      ],
+      "@hooks": [
+        "./src/hooks"
+      ],
+      "@constants": [
+        "./src/constants"
+      ],
+      "@types": [
+        "./src/types"
+      ]
+    }
   },
   "include": ["src", "vitest.setup.ts"]
 }
