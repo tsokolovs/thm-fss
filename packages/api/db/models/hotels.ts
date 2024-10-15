@@ -1,6 +1,7 @@
 import { model, Schema } from 'mongoose';
+import { Hotel } from 'fss-models';
 
-const hotelSchema = new Schema(
+const hotelSchema = new Schema<Hotel>(
   {
     chain_name: String,
     hotel_name: { type: String, index: true },

@@ -25,6 +25,7 @@
     "@types/express": "^4.17.21",
     "@types/jest": "^29.5.13",
     "@types/supertest": "^6.0.2",
+    "fss-models": "^0.0.0",
     "jest": "^29.7.0",
     "mongodb-memory-server": "^9.4.0",
     "supertest": "^7.0.0",
