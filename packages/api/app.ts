@@ -1,10 +1,10 @@
 import express, { NextFunction, Request, Response } from 'express';
 import cors from 'cors';
-import { MongoClient } from 'mongodb';
 import { hotelRouter } from '@routes/hotel';
 import { searchRouter } from '@routes/search';
 import { countryRouter } from '@routes/country';
 import { cityRouter } from '@routes/city';
+import { hotelModel } from '@db/models/hotels';
 
 const app = express();
 
@@ -17,18 +17,7 @@ app.use(countryRouter);
 app.use(cityRouter);
 
 app.get('/hotels', async (req, res) => {
-  const mongoClient = new MongoClient(process.env.DATABASE_URL);
-  console.log('Connecting to MongoDB...');
-
-  try {
-    await mongoClient.connect();
-    console.log('Successfully connected to MongoDB!');
-    const db = mongoClient.db();
-    const collection = db.collection('hotels');
-    res.send(await collection.find().toArray());
-  } finally {
-    await mongoClient.close();
-  }
+  res.send(await hotelModel.find());
 });
 
 
